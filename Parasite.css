@@ -104,7 +104,7 @@
         .banner {
             width: 100%;
             height: 750px;
-            background-image: url("/img/poster.jpg");
+            background-image: url("img/poster.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -160,7 +160,7 @@
             width: calc(60% - 40px);
             height: 400px;
             margin-right: 40px;
-            background-image: url("/img/4.jpg");
+            background-image: url("img/4.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
@@ -185,7 +185,7 @@
 
         .content2 {
             width: 100%;
-            background-image: url("/img/2.jpg");
+            background-image: url("img/2.jpg");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
@@ -316,7 +316,7 @@
          .content4 {
             width: 100%;
             height: 800px;
-            background-image: url("/img/6.jpg");
+            background-image: url("img/6.jpg");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
