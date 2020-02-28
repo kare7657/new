@@ -31,8 +31,19 @@
             letter-spacing: 2px;
             font-family: 'Noto Serif TC', serif;
         }
+        a{
+            text-decoration: none;
+            list-style: none;
+        }    
 
         /* NavBar */
+        
+        .pc {
+            display: block;
+        }
+        .mobile{
+            display: none;
+        }
 
         .NavBar {
             width: 100%;
@@ -41,6 +52,7 @@
             position: fixed;
             z-index: 999;
         }
+        
 
         .NavBar-L {
             width: calc(40% - 90px);
@@ -53,9 +65,9 @@
 
         .fas{
             color: #176E77;
-            font-size: 16pt;
+            font-size: 14pt;
             float: left;
-            line-height: 45px;
+            line-height: 50px;
             margin-right: 10px;
             
         }
@@ -104,7 +116,7 @@
         .banner {
             width: 100%;
             height: 750px;
-            background-image: url("img/poster.jpg");
+            background-image: url("/img/poster.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -124,6 +136,7 @@
             font-weight: 100;
             background-color: rgba(255, 255, 255, 1);
             padding: 80px 20px 5px 20px;
+            display: block;
         }
 
         .banner h1 {
@@ -160,7 +173,7 @@
             width: calc(60% - 40px);
             height: 400px;
             margin-right: 40px;
-            background-image: url("img/4.jpg");
+            background-image: url("/img/4.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top;
@@ -185,7 +198,7 @@
 
         .content2 {
             width: 100%;
-            background-image: url("img/2.jpg");
+            background-image: url("/img/2.jpg");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
@@ -316,7 +329,7 @@
          .content4 {
             width: 100%;
             height: 800px;
-            background-image: url("img/6.jpg");
+            background-image: url("/img/6.jpg");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
