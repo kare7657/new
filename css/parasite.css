@@ -56,8 +56,6 @@
 
         .NavBar-L {
             width: calc(40% - 90px);
-            width: 40%;
-            height: 100%;
             float: left;
             padding-left: 90px;
             box-sizing: border-box;
@@ -65,10 +63,10 @@
 
         .fas{
             color: #176E77;
-            font-size: 14pt;
+            font-size: 14pt;            
+            margin-right: 15px;
             float: left;
-            line-height: 50px;
-            margin-right: 10px;
+            padding-top: 15px;
             
         }
 
@@ -91,7 +89,6 @@
 
         .NavBar-R {
             width: 60%;
-            height: 100%;
             position: absolute;
             right: 60px;
         }
