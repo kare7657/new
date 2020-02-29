@@ -195,7 +195,7 @@
 
         .content2 {
             width: 100%;
-            background-image: url("/img/2.jpg");
+            background-image: url("../img/2.JPG");
             background-attachment: fixed;
             background-size: cover;
             background-repeat: no-repeat;
