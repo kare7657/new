@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>共享機車</title>
+    <link rel="stylesheet" href="/scooter.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <style>
+        /* 手機 */
+        @media (max-width:360px) {
+
+            /* 通用文字 */
+            h2 {
+                font-size: 24pt;
+            }
+
+            h3 {
+                font-size: 20pt;
+            }
+
+            h4 {
+                font-size: 16pt;
+            }
+            
+            /* container */
+            .container {
+                width: 100%;
+            }
+
+            .container_pd {
+                padding: 40px 0px 60px 0px;
+            }
+
+            /* navbar */
+            .navbar {
+                width: 100%;
+                height: 60px;
+            }
+
+            .navbar_L {
+                width: 40%;
+                margin: auto;
+            }
+
+            .navbar_L h3 {
+                font-size: 16pt;
+                line-height: 46pt;
+            }
+
+            .navbar_R {
+                display: none;
+            }
+
+            /* 漢堡條 */
+            .burger-bar {
+                position: relative;
+            }
+
+            .burger-bar:hover .menu {
+                display: inline-block;
+                padding: 20px 10px;
+                position: absolute;
+                left: -10px;
+                top: 60px;
+            }
+
+            .burger-bar.fas {
+                display: inline-block;
+                position: absolute;
+                left: 10px;
+                line-height: 60px;
+            }
+
+            .link-text:hover {
+                color: white;
+            }
+
+            .fas {
+                font-size: 20pt;
+                width: 40px;
+                height: 40px;
+                color: #fff;
+                text-align: center;
+                padding: 0;
+                line-height: 40px;
+            }
+
+            .menu {
+                background-color: #2A2A68;
+                padding: 0;
+                margin: 0;
+                padding: 10px 0px 10px 0px;
+                line-height: 30px;
+            }
+
+            .link-list {
+                display: inline-block;
+                width: 150px;
+                margin-bottom: 20px;
+            }
+
+            .link-text {
+                color: #fff;
+                text-decoration: none;
+                font-size: 14pt;
+                font-family: 微軟正黑體;
+                font-weight: 400;
+            }
+
+            /* banner */
+            .banner {
+                padding: 60px 0px 60px 0px;
+            }
+
+            .banner-web {
+                display: none;
+            }
+
+            .banner-phone {
+                display: block;
+                /* padding-top: 20px; */
+
+            }
+
+            /* 簡介 */
+            .about_top {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 40px 0px 60px 0px;
+
+            }
+
+            .about_top_L {
+                padding: 0px 60px;
+                width: calc(100% - 60px);
+                padding: 0px;
+            }
+
+            .about_top_L img {
+                width: 100%;
+            }
+
+            .about_top_R {
+                padding: 0px 60px;
+                width: calc(100% - 60px);
+                padding: 0px;
+            }
+
+            .about_bot {
+                display: flex;
+                flex-wrap: wrap-reverse;
+                justify-content: center;
+                padding: 0px 0px 0px 0px;
+            }
+
+            .about_bot_L {
+                padding: 0px 60px;
+                width: calc(100% - 60px);
+                padding: 0px;
+            }
+
+            .about_bot_R {
+                padding: 0px 60px;
+                width: calc(100% - 60px);
+                padding: 0px;
+            }
+
+            .about_bot_R img {
+                width: 100%;
+            }
+
+            /* 優勢 */
+            .merit {
+                height: 168vh;
+                background-position: 46% 120px;
+                background-size: 70%;
+                background-attachment: unset;
+            }
+
+            .merit_group {
+                width: 80%;
+                padding-bottom: 30px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .merit_L {
+                width: 100%;
+                position: unset;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 320px 0px 0px 0px;
+            }
+
+            .mg_L h1 {
+                display: none;
+            }
+
+            .merit_L h2 {
+                text-align: center;
+            }
+
+            .merit_L p {
+                text-align: center;
+            }
+
+            .merit_R {
+                display: none;
+                position: unset;
+            }
+
+            .mg_R p {
+                color: #fff;
+                margin: 5px 0px;
+                line-height: 24pt;
+            }
+
+            .merit .notice p {
+                font-size: 11pt;
+                color: #fff;
+                text-align: center;
+                position: unset;
+                padding: 0px 30px 30px 30px;
+                margin: 0;
+            }
+
+            /* 使用說明 */
+            .swiper-instructions{
+                display: none;
+            }            
+            .swiper-instructions-mb{
+                display: block;
+                overflow: hidden !important;
+                position: relative;
+            }
+            .swiper-instructions-mb .swiper-wrapper {
+                margin: 40px 0px 40px 0px !important;
+                
+            }
+            .swiper-instructions-mb  .swiper-slide.scard {
+                width: 280px !important;
+                margin: 0px 20px !important;
+            }            
+            .swiper-slide.scard img {
+                width: 280px !important;
+            }
+            .instructions-mb .swiper-pagination {
+                position: absolute;
+                margin: unset;
+            }
+
+            /* 註冊會員 */
+            .sinUp_group {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+
+            .sinUp_group img {
+                width: 100%;
+            }
+
+            .singUp_L {
+                width: 80%;
+            }
+
+            .singUp_M {
+                width: 80%;
+            }
+
+            .singUp_R {
+                width: 80%;
+            }
+
+            /* 品牌差異 */
+            .brand .notice {
+                width: 100%;
+            }
+
+            .table-head {
+                width: 200px;
+                margin: -50px 0px 0px -20px;
+            }
+
+            .brand .notice {
+                width: 100%;
+            }
+
+            .brand .notice p {
+                text-align: center;
+                margin: 20px 10px 0px 10px; 
+            }
+
+            /* 據點 */
+            .locations .swiper-container {
+                width: 100%;
+                height: 189px;
+            }
+
+            .locations .swiper-slide {
+                width: 100%;
+                height: 189px;
+            }
+
+            /* 計費方式 */
+            .cost img {
+                padding-top: 40px;
+            }
+
+            /* 資料來源 */
+            .source {
+                background-position: 45% 100%;
+
+            }
+
+            .source_list {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .source_list_1 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: unset;
+            }
+
+            .source_list_2 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: 40px 0px 0px 0px;
+
+            }
+
+            .source_list_3 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: 0px 0px 0px 0px;
+            }
+
+            .source_list_4 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin: 20px 0px 0px 0px;
+            }
+
+            .source_list_4 p {
+                text-align: center;
+            }
+
+            /* footer */
+            .back-top {
+                width: 50px;
+                height: 50px;
+                right: 25px;
+                bottom: 25px;
+                line-height: 50px;
+            }
+
+            .footer p {
+                margin: 20px 20px 0px 20px;
+                font-size: 9pt;
+                line-height: 14pt;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- 漢堡條 -->
+        <div class="burger-bar fas fa-bars">
+            <ul class="menu">
+                <li class="link-list"><a class="link-text" href="#c-1">簡介</a></li>
+                <li class="link-list"><a class="link-text" href="#c-2">優勢</a></li>
+                <li class="link-list"><a class="link-text" href="#c-3">使用說明</a></li>
+                <li class="link-list"><a class="link-text" href="#c-4">註冊會員</a></li>
+                <li class="link-list"><a class="link-text" href="#c-5">品牌差異</a></li>
+                <li class="link-list"><a class="link-text" href="#c-6">據點</a></li>
+                <li class="link-list"><a class="link-text" href="#c-7">計費方式</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar_L">
+            <a href="#top">
+                <h3>共享機車</h3>
+            </a>
+        </div>
+        <div class="navbar_R">
+            <div class="navbar_group">
+                <a href="#c-1">
+                    <h3>簡介</h3>
+                </a>
+                <a href="#c-2">
+                    <h3>優勢</h3>
+                </a>
+                <a href="#c-3">
+                    <h3>使用說明</h3>
+                </a>
+                <a href="#c-4">
+                    <h3>註冊會員</h3>
+                </a>
+                <a href="#c-5">
+                    <h3>品牌差異</h3>
+                </a>
+                <a href="#c-6">
+                    <h3>據點</h3>
+                </a>
+                <a href="#c-7">
+                    <h3>計費方式</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner -->
+    <div class="banner container container_pd" id="top">
+        <img src="/img/banner.jpg" alt="" class="banner-web">
+        <img src="/img/banner-phone.jpg" alt="" class="banner-phone">
+    </div>
+
+    <!-- 簡介 -->
+    <div class="about container container_pd " id="c-1">
+        <div class="title_box">
+            <h3>簡介</h3>
+        </div>
+        <div class="about_top">
+            <div class="about_top_L">
+                <img src="/img/about.png" alt="">
+            </div>
+            <div class="about_top_R">
+                <h2>短程移動共享方案</h2>
+                <p>台灣機車不管是數量或是密集度，都在全球排行上數一數二，機車更是推動台灣經濟的重要推手。但想在都會區移動，嫌計程車太貴，搭公車太繞，騎Ubike
+                    太慢，或許共享機車是你的另一好選擇。目前<span>台灣共享機車有 GoShare、WEMO 和 iRent 等三家業者</span>。如果遇上下雨，可以選擇搭 Uber 共享汽車</p>
+            </div>
+        </div>
+        <div class="about_bot">
+            <div class="about_bot_L">
+                <h2>與共享自行車差異</h2>
+                <p>共享機車的概念，其實跟 Ubike
+                    很像，民眾租用機車後，就可在指定的區域內移動。不同的是，Ubike有固定停放的停放點，但共享機車採<span>無站點式</span>，只需停在都會區裡規定的機車停車格即可，且24小時全天營運(颱風天除外)，使用手機App就可租借車輛，不管你今天是要使用共享機車，去上班上學、去遊玩，共享機車都可以作為你在都會區走跳的另一代步工具
+                </p>
+            </div>
+            <div class="about_bot_R">
+                <img src="/img/about2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- 優勢 -->
+    <div class="merit container_pd" id="c-2">
+        <div class="title_box">
+            <h3 style="color: #EAF5FF;">優勢</h3>
+        </div>
+        <div class="merit_L">
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>1</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>短程移動</h2>
+                    <p>低成本體驗電動車 <br>
+                        以租代買省去維護費用 <br>
+                        <span>(保養、油資、保險、停車費等支出)</span>
+                    </p>
+                </div>
+            </div>
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>2</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>環保無煙</h2>
+                    <p>重複性使用電池 <br>
+                        電池交換平台提供換電
+                    </p>
+                </div>
+            </div>
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>3</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>智慧城市</h2>
+                    <p>APP隨租隨用 <br>
+                        最快3分鐘完成註冊 <br>
+                        提供手機無線充電
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="merit_R">
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>4</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>租含車險</h2>
+                    <p>涵蓋強制險、第三責任險 <br>
+                        駕駛人傷害險等交通保險 <br>
+                        比傳統租賃更有保障
+                    </p>
+                </div>
+            </div>
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>5</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>免停車費</h2>
+                    <p>停在公共停車場免費 <br>
+                        部分品牌與私人停車場合作
+                    </p>
+                </div>
+            </div>
+            <div class="merit_group">
+                <div class="mg_L">
+                    <h1>6</h1>
+                </div>
+                <div class="mg_R">
+                    <h2>全天客服</h2>
+                    <p>24hr線上客服 <span>※颱風天除外</span> <br>
+                        不定時工程師維護&換電 <br>
+                        錯過大眾運輸末班車的選擇
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="notice">
+            <p>※實際服務依各品牌有所差異，詳見官網公告</p>
+        </div>
+    </div>
+
+    <!-- 使用說明 -->
+    <div class="instructions container_pd" id="c-3">
+        <div class="title_box">
+            <h3 style="color: #EAF5FF;">使用說明</h3>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper-container swiper-instructions">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide scard"><img src="/img/instructions1.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions2.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions3.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions4.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions5.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions6.jpg" alt=""></div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+        <div class="swiper-instructions-mb">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide scard"><img src="/img/instructions1.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions2.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions3.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions4.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions5.jpg" alt=""></div>
+                <div class="swiper-slide scard"><img src="/img/instructions6.jpg" alt=""></div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+    </div>
+
+    <!-- 註冊會員 -->
+    <div class="singUp container container_pd" id="c-4">
+        <div class="title_box">
+            <h3>註冊會員</h3>
+        </div>
+        <div class="sinUp_group">
+            <div class="singUp_L">
+                <div class="singUp_img">
+                    <img src="/img/singUp-1.png" alt="">
+                </div>
+                <div class="singUp_p">
+                    <h4>下載APP</h4>
+                    <p>輸入手機、信箱 </p>
+                </div>
+            </div>
+            <div class="singUp_M">
+                <div class="singUp_img">
+                    <img src="/img/singUp-2.png" alt="">
+                </div>
+                <div class="singUp_p">
+                    <h4>掃描證件</h4>
+                    <p>身分證、機車駕照 <br><span>(輕型/重型駕照可租車種不同)</span> <br>拍攝本人面部驗證</p>
+                </div>
+            </div>
+            <div class="singUp_R">
+                <div class="singUp_img">
+                    <img src="/img/singUp-3.png" alt="">
+                </div>
+                <div class="singUp_p">
+                    <h4>付款設定</h4>
+                    <p>綁定信用卡/簽帳卡</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 品牌差異 -->
+    <div class="brand container_pd" id="c-5">
+        <div class="title_box">
+            <h3>品牌差異</h3>
+        </div>
+        <div class="brand_wrap container">
+            <div class="brand_table">
+                <table border="1">
+                    <colgroup style="background-color: #816FC2;"></colgroup>
+                    <colgroup style="background-color: #fff;"></colgroup>
+                    <colgroup style="background-color: #EAF5FF;"></colgroup>
+                    <colgroup style="background-color: #fff;"></colgroup>
+                    <colgroup style="background-color: #EAF5FF;"></colgroup>
+                    <tr>
+                        <th>品牌</th>
+                        <td>
+                            <div class="table-head">短程最佳</div>
+                            <img src="/img/goshare logo-2.png" alt="">
+                            <h4>GoShare</h4>
+                        </td>
+                        <td>
+                            <div class="table-head">日租最佳</div>
+                            <img src="/img/WeMo logo.png" alt="">
+                            <h4>WeMo</h4>
+                        </td>
+                        <td>
+                            <div class="table-head">範圍最廣</div>
+                            <img src="/img/iRent logo.png" alt="">
+                            <h4>iRent</h4>
+                        </td>
+                        <td>
+                            <div class="table-head">經濟實惠</div>
+                            <img src="/img/ubike logo.png" alt="">
+                            <h4>Ubike</h4>
+                        </td>
+                        　
+                    </tr>
+                    　<tr>
+                        <th style="height: 50px;">營運<br>
+                            單位</th>
+                        <td>Gogoro</td>
+                        <td>威摩科技</td>
+                        <td>和運租車</td>
+                        <td>微笑單車</td>
+                        　
+                    </tr>
+                    <tr>
+                        <th>車款</th>
+                        <td>
+                            <a href="/img/goshare-GogoroViva.png" data-lightbox="roadtrip" data-title="GoShare">
+                                <!-- <div class="goshare-img"></div> -->
+                                <img src="/img/goshare-GogoroViva.png" alt="" class="scooter-img">
+                            </a>
+                            <a href="/img/goshare-Gogoro2.png" data-lightbox="roadtrip" data-title="GoShare"></a>
+                        </td>
+                        <td>
+                            <a href="/img/wemo-Candy3.png" data-lightbox="roadtrip" data-title="WeMo">
+                                <img src="/img/wemo-Candy3.png" alt="" class="scooter-img">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/img/irent-Many110.png" data-lightbox="roadtrip" data-title="iRent">
+                                <img src="/img/irent-Many110.png" alt="" class="scooter-img">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/img/ubike.png" data-lightbox="roadtrip" data-title="Ubike">
+                                <img src="/img/ubike.png" alt="" class="scooter-img">
+                            </a>
+                        </td>
+                    </tr>
+                    　<tr>
+                        <th style="height: 120px;">啟用<br>
+                            時間</th>
+                        <td>2016/08-德國 <br>
+                            2019/08-桃園 <br>
+                            2019/10-台北
+                        </td>
+                        <td>2016/10-台北 <br>
+                            2019/04-新北
+                        </td>
+                        <td>2019/06-台北 <br>
+                            2019/10-台南 <br>
+                            2019/10-高雄 <br>
+                            2019/11-台中
+                        </td>
+                        <td>2012/08-台北 <br>
+                            至今有新北、桃竹苗 <br>
+                            臺中、彰化等據點
+                        </td>
+                        　
+                    </tr>
+                    <tr>
+                        <th>換電<br>
+                            方式</th>
+                        <td>Gogoro Network™ <br>
+                            智慧電池交換平台 <br>
+                            自行更換
+                        </td>
+                        <td>無法自行換電 <br>
+                            由官方工程師親送更換
+                        </td>
+                        <td>irent換電站 <br>
+                            自行更換
+                        </td>
+                        <td>-</td>
+                        　
+                    </tr>
+                    　<tr>
+                        <th style="height: 120px;">停車<br>
+                            方式</th>
+                        <td>公共停車格</td>
+                        <td>公共停車格 <br>
+                            與私人停車場合作 <br>
+                            (免卡片、代幣，透過App就能入場)
+                        </td>
+                        <td>公共停車格 <br>
+                            與私人停車場合作
+                        </td>
+                        <td>固定停放站</td>
+                        　
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="notice">
+            <p>※以上資料僅供參考，詳情依各廠公告為主</p>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- 據點 -->
+    <div class="locations container container_pd" id="c-6">
+        <div class="title_box">
+            <h3>據點</h3>
+        </div>
+
+        <!-- Swiper -->
+        <div class="swiper-container slocation">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(/img/location1.jpg)">
+                </div>
+                <div class="swiper-slide" style="background-image:url(/img/location2.jpg)">
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+    </div>
+
+    <!-- 計費方式 -->
+    <div class="cost container container_pd" id="c-7">
+        <div class="title_box">
+            <h3>計費方式</h3>
+        </div>
+        <img src="/img/cost.png" alt="">
+    </div>
+
+    <!-- 資料來源 -->
+    <div class="source">
+        <div class="title_box">
+            <h3>資料來源</h3>
+        </div>
+        <div class="source_list container container_pd">
+            <div class="source_list_1">
+                <a href="https://www.ridegoshare.com/tw/" target="_blank"><img src="/img/goshare logo-2.png" alt="">
+                    <h4>Goshare</h4>
+                </a>
+            </div>
+            <div class="source_list_2">
+                <a href="https://www.wemoscooter.com/" target="_blank"><img src="/img/WeMo logo.png" alt="">
+                    <h4>WeMo</h4>
+                </a>
+            </div>
+            <div class="source_list_3">
+                <a href="https://www.easyrent.com.tw/UPLOAD/event/108event/1917/index.html" target="_blank"><img
+                        src="/img/iRent logo.png" alt="">
+                    <h4>iRent</h4>
+                </a>
+            </div>
+            <div class="source_list_4">
+                <p>
+                    <a href="https://i.youbike.com.tw/home/" target="_blank">Ubike官網</a> <br>
+                    <a href="https://www.money101.com.tw/blog/wemo-goshare-irent-%E5%85%B1%E4%BA%AB%E6%A9%9F%E8%BB%8A-%E7%AF%84%E5%9C%8D-%E5%84%AA%E6%83%A0"
+                        target="_blank">money101</a> <br>
+                    <a href="https://autos.yahoo.com.tw/news/goshare-app%E5%85%B1%E4%BA%AB%E9%9B%BB%E8%BB%8A%E6%9C%8D%E5%8B%99%E5%85%A8%E6%94%BB%E7%95%A5-030020650.html"
+                        target="_blank">yahoo汽車新聞</a> <br>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <p>Copyright © 2019 Goshare,Wemo,iRent All rights reserved | site project by Eileen</p>
+        <a href="#top">
+            <div class="back-top">▲</div>
+        </a>
+    </div>
+
+
+    <!-- JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+
+    <!-- 據點輪播 -->
+    <script>
+        var swiper = new Swiper('.slocation', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            //   loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <!-- 使用說明輪播 -->
+    <script>
+        var swiper = new Swiper('.swiper-instructions', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            // loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },            
+        });
+    </script>
+    <!-- 使用說明輪播-手機板 -->
+    <script>
+        var swiper = new Swiper('.swiper-instructions-mb', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },            
+        });
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox-plus-jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.js"></script>
+</body>
+
+</html>
