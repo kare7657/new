@@ -32,14 +32,28 @@
                 padding-left: unset;
             }
 
-            .burger-bar {
-                width: 100%;
-                padding-top: 0;
-                line-height: 36pt;
-
+            .fas {
+                font-size: 18pt;
+                margin-left: 20px;
+                margin-right: unset;
             }
 
-            .burger-bar ul {
+            .NavBar-R {
+                width: 80%;
+                height: 100%;
+                position: absolute;
+                right: 0px;
+            }
+
+            .Nav-btn2 {
+                display: flex;
+            }
+            .menu {
+                width: 60px;
+                height: 50px;
+            }
+
+            .menu ul {
                 display: none;
                 width: 100vw;
                 height: 35vh;
@@ -52,30 +66,36 @@
                 padding: 40px 0;
                 text-align: center;
                 font-family: 微軟正黑體;
-
             }
 
-            .burger-bar:hover ul {
+            .menu:hover ul {
                 display: inline-block;
-
-
             }
 
-            .burger-bar a {
+            .menu a {
                 color: #fff;
 
             }
 
-            .burger-bar:hover ul {
+            .menu:hover ul {
                 top: 50px;
                 left: 0;
                 border-bottom: solid 1px #000;
             }
 
-            .burger-bar ul li:hover {
+            .menu ul li:hover {
                 color: #000;
             }
 
+            .title h3 {
+                font-size: 20px;
+                line-height: 50px;
+                font-family: 微軟正黑體;
+                margin: 0;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
             .banner {
                 height: 600px;
                 background-attachment: unset;
@@ -92,34 +112,6 @@
                 right: 0px;
                 bottom: -55px;
             }
-
-            .fas {
-                font-size: 18pt;
-                margin-left: 20px;
-                margin-right: unset;
-            }
-
-            .NavBar-R {
-                width: 80%;
-                height: 100%;
-                position: absolute;
-                right: 0px;
-            }
-
-            .NavBar2 {
-                position: relative;
-            }
-
-            .title h3 {
-                font-size: 20px;
-                line-height: 50px;
-                font-family: 微軟正黑體;
-                margin: 0;
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
 
 
             /* content1 */
@@ -430,7 +422,7 @@
             </div>
         </div>
         <div class="Nav-btn2 mobile">
-            <div class="NavBar-L">
+            <div class="menu">
                 <div class="burger-bar fas fa-bars">
                     <ul>
                         <a href="#c1">
