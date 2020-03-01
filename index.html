@@ -44,60 +44,51 @@
                 display: flex;
             }
 
-            .fas {
-                color: #187882;
+            .menu {              
+                width: 60px;
+                height: 60px;
+                position: relative;
+            }
+
+            .menu .fas {
                 font-size: 30px;
-                line-height: 30px;
-                position: absolute;
-                left: 25px;        
-                
-            }
-
-            .menu {                
-                /*隱藏選單，將最大高度設為0，overflow的文字就不會顯示*/
-                height: 100vh;
-                overflow: hidden;
-                /*載入時漸變效果*/
-                transition: max-height 2.3s;
-                margin-top: 1px;
-                /*絕對定位疊在網頁上，並且利用上頭的隱藏技巧*/
-                position: absolute;
-                z-index: 100;
-                top: 90px;
-                left: 0;
-                right: 0;
-                background: rgb(49, 49, 49);
-                text-align: center;                
-                list-style: none;
+                line-height: 60px;
+                margin-left: 20px;
                 padding: 0;
-                
+                color: #176E77;
             }
 
-            .menu li {
-                float: none;
+            .menu ul {
+                display: none;
+                width: 100vw;
+                height: 50vh;
+                background-color: rgba(23, 110, 119, 0.95);
+                font-size: 14pt;
+                line-height: 60pt;
+                position: absolute;
+                top: 0;
+                margin: 0;
+                padding: 40px 0;
+                text-align: center;
+                font-family: 微軟正黑體;
             }
 
-            .menu li a {
-                transition: all 0.3s;
-                color: white;
+            .menu:hover ul {
+                display: inline-block;
             }
 
-            .menu li a:hover {
-                background: #69CA62;
+            .menu a {
+                color: #fff;
             }
 
-            /*RWD時，選單圖示的位置*/
-            .showMenu {
-                display: block;
-                float: right;
-                margin: 1em;
-                font-size: 20px;
-                color: black;
+            .menu:hover ul {
+                top: 60px;
+                left: 0;
+                border-bottom: solid 1px #000;
             }
 
-            /*jQ點擊後動態在 body 加上 class ，藉著修改 max-height，畫面就顯示了*/
-            .menu-show .menu {
-                max-height: 500px
+            .menu ul li:hover {
+                color: #000;
             }
 
             .title h3 {
@@ -257,6 +248,9 @@
                 margin: 0;
             }
 
+            .menu:hover ul {
+                height: 100vh;
+            }
 
             .banner {
                 height: 550px;
@@ -431,15 +425,33 @@
                 </a>
             </div>
         </div>
-        <a href="#" class="showMenu"><i class="fas fa-bars"></i></a>
-        <ul class="menu">
-            <li><a href="#c1">劇情介紹</a></li>
-            <li><a href="#c2">獲得獎項</a></li>
-            <li><a href="#c3">角色介紹</a></li>
-            <li><a href="#c4">預告</a></li>
-        </ul>
+        <div class="Nav-btn2 mobile">
+            <div class="menu">
+                <i class="fas fa-bars">
+                    <ul>
+                        <a href="#c1">
+                            <li>劇情介紹</li>
+                        </a>
+                        <a href="#c2">
+                            <li>獲得獎項</li>
+                        </a>
+                        <a href="#c3">
+                            <li>角色介紹</li>
+                        </a>
+                        <a href="#c4">
+                            <li>預告</li>
+                        </a>
+                    </ul>
+                </i>
+            </div>
+            <div class="title">
+                <a href="#top">
+                    <h3>寄生上流</h3>
+                </a>
+            </div>
+        </div>
     </div>
-
+    
     <div class="banner" id="top">
         <span>PARASITE</span>
         <h1>寄生上流</h1>
@@ -578,18 +590,6 @@
     <a href="#top">
         <div class="back-top">△</div>
     </a>
-
-    <script>
-        $(document).ready(function () {
-            $('.showMenu').on('click', function (event) {
-                event.preventDefault();
-                $('body').toggleClass('menu-show');
-            });
-            $(".menu li a").on("click", function (event) {
-                $('body').toggleClass('menu-show');
-            });
-        });
-    </script>
 
 </body>
 
