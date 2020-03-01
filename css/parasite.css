@@ -34,7 +34,12 @@
         a{
             text-decoration: none;
             list-style: none;
-        }    
+        }  
+        
+        /* 漢堡條 */
+        .showMenu{
+            display:none;
+          }
 
         /* NavBar */
         
